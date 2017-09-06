@@ -34,11 +34,25 @@ INSTALLED_APPS = [
 	'home',
     'django.contrib.admin',
     'django.contrib.auth',
+	'django.contrib.sites',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+	'tinymce',
+	'django_extensions',
+	'sorl.thumbnail',
+	'newsletter',
+	
 ]
+
+SITE_ID = 1
+
+NEWSLETTER_CONFIRM_EMAIL = False
+
+NEWSLETTER_RICHTEXT_WIDGET = "tinymce.widgets.TinyMCE"
+
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -118,4 +132,17 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+STATIC_ROOT = 'staticfiles'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
+
 STATIC_URL = '/static/'
+
+# Gmail configuration
+EMAIL_USE_TLS = True
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'shanksamit@gmail.com'
+EMAIL_HOST_PASSWORD = 'amit123**'
+
